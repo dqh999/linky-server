@@ -1,4 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
 spring:
   application:
     name: Linky-App
+  datasource:
+    url: jdbc:mysql://localhost:3307/linky_db?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: Hop2005@
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+            redirect-uri:
+            scope: email,profile,openid
+        provider:
+          user-info-uri:
+  jwt:
+    expiration: 2592000 #30 days = 30 * 24 * 60 * 60
+    expiration-refresh-token: 5184000 #60 days = 60 * 24 * 60 * 60
+    secretKey: TaqlmGv1iEDMRiFp/pHuID1+T84IABfuA0xXh4GhiUI=
 
+logging:
+  level:
+    org:
+      springframework.security: DEBUG
