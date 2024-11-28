@@ -20,7 +20,7 @@ CREATE TABLE tbl_user_tokens (
     issued_at datetime,
     expires_at datetime,
     refresh_token varchar(255),
-    refresh_expiration_at datetime,
+    refresh_expires_at datetime,
     device_info varchar(255),
     ip_address varchar(45),
     created_at timestamp,
