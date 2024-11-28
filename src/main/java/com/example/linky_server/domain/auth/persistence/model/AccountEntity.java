@@ -1,9 +1,8 @@
 package com.example.linky_server.domain.auth.persistence.model;
 
 import com.example.linky_server.common.model.BaseEntity;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.example.linky_server.domain.auth.contant.AccountRole;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -12,7 +11,8 @@ import lombok.experimental.FieldDefaults;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class AccountEntity extends BaseEntity {
-    String role;
+    @Enumerated(EnumType.STRING)
+    AccountRole role;
     @Column(name = "user_name",unique = true)
     String userName;
     @Column(name = "phone_number",unique = true)

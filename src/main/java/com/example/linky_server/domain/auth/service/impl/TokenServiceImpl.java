@@ -25,10 +25,11 @@ public class TokenServiceImpl implements ITokenService {
     private long expiration;
     @Value("${spring.jwt.expiration-refresh-token}")
     private long expirationRefreshToken;
-    @Value("${spring.jwt.secretKey}")
-    private String secretKey;
+    @Value("${spring.jwt.secretKeyAccess}")
+    private String secretKeyAccess;
     @Override
-    public TokenResponse createToken(String accountId, String userName) {
+    public TokenResponse createToken(String accountId,
+                                     String userName) {
         Map<String, Object> claims = buildClaims(accountId, userName);
         Date issuedAt = new Date(System.currentTimeMillis());
         Date expiresAt = new Date(issuedAt.getTime() + expiration);
@@ -58,11 +59,9 @@ public class TokenServiceImpl implements ITokenService {
         claims.put("subject", subject);
         return claims;
     }
-    private String generateToken(
-            Map<String, Object> claims,
-            String subject,
-            Date expiresAt
-    ) {
+    private String generateToken(Map<String, Object> claims,
+                                 String subject,
+                                 Date expiresAt) {
         return Jwts.builder()
                 .claims(claims)
                 .subject(subject)
@@ -71,7 +70,7 @@ public class TokenServiceImpl implements ITokenService {
                 .compact();
     }
     private SecretKey getSignInKey() {
-        byte[] bytes = Decoders.BASE64.decode(secretKey);
+        byte[] bytes = Decoders.BASE64.decode(secretKeyAccess);
         return Keys.hmacShaKeyFor(bytes);
     }
     private String generateRefreshToken(){
