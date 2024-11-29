@@ -30,6 +30,7 @@ CREATE TABLE tbl_chat_conversations (
     id varchar(36) primary key,
     type varchar(36) not null,
     name varchar(255),
+    creator_id varchar(36),
     created_at timestamp,
     updated_at timestamp
 );

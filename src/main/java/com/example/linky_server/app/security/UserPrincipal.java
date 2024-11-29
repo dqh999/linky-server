@@ -11,7 +11,8 @@ import java.util.Collection;
 import java.util.List;
 
 @Getter @Setter
-public class UsePrincipal implements UserDetails {
+public class UserPrincipal implements UserDetails {
+    String id;
     private String userName;
     private String password;
     private String role;

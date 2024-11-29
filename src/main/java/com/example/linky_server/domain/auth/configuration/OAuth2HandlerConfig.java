@@ -14,6 +14,7 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class OAuth2HandlerConfig {
     private final GoogleOAuth2Handler googleOAuth2Handler;
+
     @Bean
     public Map<OAuth2Type, IOAuth2Service> oauth2Providers() {
         Map<OAuth2Type, IOAuth2Service> map = new EnumMap<>(OAuth2Type.class);
