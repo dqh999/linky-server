@@ -11,13 +11,13 @@ Welcome to the **Chat App** project! This is a real-time messaging application w
 - **Group Chats**: Users can create and join group conversations.
 - **Message Status**: Track whether messages are delivered and read.
 - **Typing Indicators**: See when other users are typing in a conversation.
-- **Push Notifications**: Receive notifications when a new message is received.
+- **Push Notifications**: Receive notifications when a new messagePayload is received.
 
 ## Technologies Used
 
 - **Backend**: Java, Spring Boot, WebSocket
 - **Frontend**: React (for chat interface)
-- **Database**: PostgreSQL (for storing user, conversation, and message data)
+- **Database**: PostgreSQL (for storing user, conversation, and messagePayload data)
 - **Authentication**: JWT (JSON Web Tokens) for secure authentication
 - **Real-time Communication**: WebSocket for bidirectional communication
 - **Version Control**: Git, GitHub

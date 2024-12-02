@@ -15,4 +15,5 @@ public interface IConversationService {
 
     ParticipantResponse addParticipant(UserPrincipal userRequest,
                                        AddParticipantRequest request);
+
 }
