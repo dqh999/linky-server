@@ -1,9 +1,11 @@
-package com.example.linky_server.app.dataTransferObject;
+package com.example.linky_server.app.contant;
 
+import com.example.staynex_server.common.dataTransferObject.response.ApiResponseCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-@AllArgsConstructor @Getter
+@AllArgsConstructor
+@Getter
 public enum ResponseCode implements ApiResponseCode {
     ACCESS_DENIED("ACCESS_DENIED", 403),
     VALIDATION_ERROR("VALIDATION_ERROR", 422),

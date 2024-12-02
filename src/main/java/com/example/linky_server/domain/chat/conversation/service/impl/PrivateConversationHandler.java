@@ -6,6 +6,7 @@ import com.example.linky_server.domain.chat.conversation.dataTransferObject.resp
 import com.example.linky_server.domain.chat.conversation.mapper.ParticipantMapper;
 import com.example.linky_server.domain.chat.conversation.persistence.model.ConversationEntity;
 import com.example.linky_server.domain.chat.conversation.service.IConversationTypeHandler;
+import com.example.linky_server.infrastructure.websocket.WebSocketHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import java.util.List;
 public class PrivateConversationHandler implements IConversationTypeHandler {
     private final ParticipantFactory participantFactory;
     private final ParticipantMapper participantMapper;
+    private final WebSocketHandler webSocketHandler;
     @Override
     public ParticipantResponse addParticipants(UserPrincipal userRequest,
                                                ConversationEntity conversationEntity,
@@ -27,12 +29,13 @@ public class PrivateConversationHandler implements IConversationTypeHandler {
         var entities = participantFactory.createEntities(conversationId,accountIds);
         return null;
     }
+
     private void validateRequest(ConversationEntity entity,
                                  List<String> accountIds) {
-        if (!entity.getType().equals(ConversationType.PRIVATE)){
+        if (!entity.getType().equals(ConversationType.PRIVATE)) {
             throw new RuntimeException("private");
         }
-        validateParticipantLimit(accountIds,2);
+        validateParticipantLimit(accountIds, 2);
     }
 
     @Override

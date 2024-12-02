@@ -1,5 +1,6 @@
 package com.example.linky_server.domain.auth.service.impl;
 
+import com.example.linky_server.app.security.UserPrincipal;
 import com.example.linky_server.domain.auth.dataTransferObject.response.TokenResponse;
 import com.example.linky_server.domain.auth.persistence.model.TokenEntity;
 import com.example.linky_server.domain.auth.persistence.repository.TokenRepository;
@@ -75,5 +76,17 @@ public class TokenServiceImpl implements ITokenService {
     }
     private String generateRefreshToken(){
         return UUID.randomUUID().toString();
+    }
+
+    @Override
+    public TokenEntity authenticateToken(String accessToken) {
+        Jwts.parser()
+                .setSigningKey(getSignInKey())
+                .build()
+                .parseClaimsJws(accessToken)
+                .getBody();
+        TokenEntity existingTokenEntity = tokenRepository.findByValue(accessToken);
+
+        return existingTokenEntity;
     }
 }

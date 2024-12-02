@@ -1,5 +1,6 @@
 package com.example.linky_server.domain.auth.service.impl;
 
+import com.example.linky_server.app.security.UserPrincipal;
 import com.example.linky_server.domain.auth.contant.OAuth2Type;
 import com.example.linky_server.domain.auth.dataTransferObject.response.AccountResponse;
 import com.example.linky_server.domain.auth.persistence.model.AccountEntity;
@@ -17,6 +18,7 @@ import java.util.Map;
 public class AccountServiceImpl implements IAccountService {
     private final Map<OAuth2Type, IOAuth2Service> oauth2Providers;
     private final ITokenService tokenService;
+    private final AccountRepository accountRepository;
     @Override
     public String buildOAuth2Url(OAuth2Type oAuth2Type) {
         var oauth2Provider = oauth2Providers.get(oAuth2Type);
@@ -32,6 +34,18 @@ public class AccountServiceImpl implements IAccountService {
                 .id(accountEntity.getId())
                 .role(accountEntity.getRole())
                 .token(tokenResponse)
+                .build();
+    }
+
+    @Override
+    public UserPrincipal authenticate(String accessToken) {
+        var token = tokenService.authenticateToken(accessToken);
+        AccountEntity existingAccount = accountRepository.findById(token.getAccountId())
+                .orElseThrow();
+        return UserPrincipal.builder()
+                .id(existingAccount.getId())
+                .userName(existingAccount.getUserName())
+                .role(existingAccount.getRole().getRole())
                 .build();
     }
 }
