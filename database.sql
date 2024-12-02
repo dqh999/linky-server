@@ -30,7 +30,6 @@ CREATE TABLE tbl_user_tokens
     created_at         timestamp,
     updated_at         timestamp
 );
-
 CREATE TABLE tbl_chat_conversations
 (
     id         varchar(36) primary key,

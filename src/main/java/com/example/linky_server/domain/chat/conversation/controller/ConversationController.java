@@ -18,13 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ConversationController {
     private final IConversationService conversationService;
     @PostMapping
-    public ResponseEntity<?> handleCreateConversationRequest(
+    public ResponseEntity<?> handleCreateConversation(
             @AuthenticationPrincipal UserPrincipal userRequest,
             @RequestBody CreateConversationRequest request
-            ) {
+            ){
         var res = conversationService.createConversation(userRequest, request);
-        return ApiResponse.build()
-                .withData(res)
-                .toEntity();
+        return ResponseEntity.ok(res);
     }
 }
