@@ -1,4 +1,4 @@
-package com.example.linky_server.common.model;
+package com.example.linky_server.app.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

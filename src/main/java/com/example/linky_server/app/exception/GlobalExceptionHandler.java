@@ -4,12 +4,15 @@ import com.example.linky_server.app.contant.ResponseCode;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.security.access.AccessDeniedException;
 
-import com.example.staynex_server.common.dataTransferObject.response.ApiResponse;
-import com.example.staynex_server.common.dataTransferObject.response.ApiResponseCode;
+import com.example.linky_server.app.dataTransferObject.ApiResponse;
+import com.example.linky_server.app.dataTransferObject.ApiResponseCode;
+import com.example.linky_server.app.dataTransferObject.ResponseCode;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

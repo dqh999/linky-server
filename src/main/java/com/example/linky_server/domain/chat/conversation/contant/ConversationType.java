@@ -7,5 +7,6 @@ import lombok.Getter;
 public enum ConversationType {
     PRIVATE("PRIVATE"),
     GROUP("GROUP");
+
     private final String type;
 }

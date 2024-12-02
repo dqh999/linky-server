@@ -11,12 +11,12 @@ import java.util.List;
 @Getter @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class PageResponse<T> implements Serializable {
-    Integer totalElements;
-    Integer totalViews;
-    Integer totalPages;
-    Integer currentPage;
-    Integer pageSize;
+    int totalElements;
+    int totalViews;
+    int totalPages;
+    int currentPage;
+    int pageSize;
     List<T> data;
-    Boolean hasNext;
-    Boolean hasPrevious;
+    boolean hasNext;
+    boolean hasPrevious;
 }

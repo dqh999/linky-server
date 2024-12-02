@@ -1,5 +1,7 @@
 package com.example.linky_server.domain.chat.conversation.service.impl;
 
+import com.example.linky_server.domain.chat.conversation.dataTransferObject.response.ConversationResponse;
+import com.example.linky_server.domain.chat.conversation.dataTransferObject.response.ParticipantResponse;
 import com.example.linky_server.domain.chat.conversation.persistence.model.ConversationEntity;
 import com.example.linky_server.domain.chat.conversation.service.IConversationTypeHandler;
 import lombok.RequiredArgsConstructor;
@@ -13,9 +15,14 @@ import java.util.List;
 public class GroupConversationHandler  implements IConversationTypeHandler {
     private final ParticipantFactory participantFactory;
     @Override
-    public void addParticipants(UserPrincipal userRequest,
-                                ConversationEntity conversationEntity,
-                                List<String> accountIds) {
+    public ParticipantResponse addParticipants(UserPrincipal userRequest,
+                                               ConversationEntity conversationEntity,
+                                               List<String> accountIds) {
+        return null;
+    }
 
+    @Override
+    public ConversationResponse getConversationDetails(UserPrincipal userRequest, ConversationEntity conversationEntity) {
+        return null;
     }
 }
