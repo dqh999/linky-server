@@ -1,6 +1,10 @@
 package com.example.linky_server.domain.chat.conversation.controller;
 
+<<<<<<< HEAD
 import com.example.linky_server.app.dataTransferObject.ApiResponse;
+=======
+<<<<<<< HEAD
+>>>>>>> d4d5cbe5a2b31ef46122e7caf36154099ce8cf7c
 import com.example.linky_server.app.security.UserPrincipal;
 import com.example.linky_server.domain.chat.conversation.dataTransferObject.request.CreateConversationRequest;
 import com.example.linky_server.domain.chat.conversation.service.IConversationService;
@@ -25,4 +29,10 @@ public class ConversationController {
         var res = conversationService.createConversation(userRequest, request);
         return ResponseEntity.ok(res);
     }
+<<<<<<< HEAD
+=======
+=======
+public class ConversationController {
+>>>>>>> 7ae6b1c8c3392252ee4a32c15d3af247f3bc9717
+>>>>>>> d4d5cbe5a2b31ef46122e7caf36154099ce8cf7c
 }
