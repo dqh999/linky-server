@@ -1,4 +1,4 @@
-package com.example.staynex_server.common.mapper;
+package com.example.linky_server.app.mapper;
 
 import org.mapstruct.BeanMapping;
 import org.mapstruct.NullValueCheckStrategy;

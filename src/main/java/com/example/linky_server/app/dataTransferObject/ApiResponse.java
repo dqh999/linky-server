@@ -1,4 +1,4 @@
-package com.example.staynex_server.common.dataTransferObject.response;
+package com.example.linky_server.app.dataTransferObject;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
