@@ -45,6 +45,7 @@ CREATE TABLE tbl_chat_conversation_participants
     conversation_id varchar(36),
     account_id      varchar(36),
     role            varchar(36),
+    nick_name varchar(255),
     created_at      timestamp,
     updated_at      timestamp
 );
