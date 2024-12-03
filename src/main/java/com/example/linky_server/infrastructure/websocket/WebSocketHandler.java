@@ -8,7 +8,11 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class WebSocketHandler {
     private final SimpMessagingTemplate template;
-    public void sendMessage(String destination, MessagePayload<?> messagePayload) {
-        template.convertAndSend(destination, messagePayload);
+    public void sendMessage(String destination, String type,Object message) {
+        MessagePayload<Object> payload = MessagePayload.builder()
+                .type(type)
+                .data(message)
+                .build();
+        template.convertAndSend(destination, payload);
     }
 }

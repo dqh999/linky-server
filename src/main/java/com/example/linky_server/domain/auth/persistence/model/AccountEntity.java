@@ -1,6 +1,6 @@
 package com.example.linky_server.domain.auth.persistence.model;
 
-import com.example.linky_server.common.model.BaseEntity;
+import com.example.linky_server.app.model.BaseEntity;
 import com.example.linky_server.domain.auth.contant.AccountRole;
 import jakarta.persistence.*;
 import lombok.*;
