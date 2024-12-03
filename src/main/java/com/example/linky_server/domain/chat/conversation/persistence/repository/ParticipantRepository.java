@@ -4,4 +4,5 @@ import com.example.linky_server.domain.chat.conversation.persistence.model.Parti
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ParticipantRepository extends JpaRepository<ParticipantEntity,String> {
+    boolean existsByConversationIdAndAccountId(String conversationId, String accountId);
 }

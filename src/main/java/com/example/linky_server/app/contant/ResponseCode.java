@@ -1,6 +1,6 @@
 package com.example.linky_server.app.contant;
 
-import com.example.staynex_server.common.dataTransferObject.response.ApiResponseCode;
+import com.example.linky_server.app.dataTransferObject.ApiResponseCode;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
