@@ -32,7 +32,7 @@ public class GoogleOAuth2Handler implements IOAuth2Service {
     private String redirectUri;
     @Value("${spring.security.oauth2.client.registration.google.scope}")
     private String scope;
-    @Value("${spring.security.oauth2.client.provider.user-info-uri}")
+    @Value("${spring.security.oauth2.client.provider.google.user-info-uri}")
     private String userInfoUri;
     private final AccountRepository accountRepository;
     @Override

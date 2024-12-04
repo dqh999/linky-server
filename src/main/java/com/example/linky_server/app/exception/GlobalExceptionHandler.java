@@ -1,5 +1,6 @@
 package com.example.linky_server.app.exception;
 
+import com.example.linky_server.app.contant.ResponseCode;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.security.access.AccessDeniedException;
 
