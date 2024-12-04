@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-@Getter @Setter
+@Getter @Setter @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class UserPrincipal implements UserDetails {
     String id;
